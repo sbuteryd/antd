@@ -15,7 +15,7 @@ export default class Admin extends Component {
                 <Col className='nav-left' span={4}>
                     <NavLeft/>
                 </Col>
-                <Col clasName='main' span={20}>
+                <Col className='main' span={20}>
                     <Header/>
                     <Row className='content'>
                         Content
