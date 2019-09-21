@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import MenuConfig  from '../../config/menuConfig'
 
 export default class NavLeft extends Component{
     render() {
@@ -9,3 +10,9 @@ export default class NavLeft extends Component{
         );
     }
 }
+//
+// const style ={
+//    title:{
+//        background:'red'
+//    }
+// }
