@@ -4,6 +4,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import {Row,Col,Button} from "antd";
 import './style/common.less'
+import Home from '../src/pages/home/'
 
 
 
@@ -18,7 +19,7 @@ export default class Admin extends Component {
                 <Col className='main' span={20}>
                     <Header/>
                     <Row className='content'>
-                        Content
+                        <Home/>
                     </Row>
                     <Footer/>
                 </Col>
