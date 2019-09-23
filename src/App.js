@@ -5,8 +5,8 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-        <div className="App">
-          <Button type="primary">Button12</Button>
+        <div>
+            {this.props.children}
         </div>
     );
   }

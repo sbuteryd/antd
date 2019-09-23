@@ -25,7 +25,7 @@ export default class NavLeft extends Component{
                )
             }
             return <Menu.Item title={item.title} key={item.key}>
-                <Menu.Item to={item.key}>{item.title}</Menu.Item>
+                <NavLink to={item.key}>{item.title}</NavLink>
             </Menu.Item>
 
         })
