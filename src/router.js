@@ -9,6 +9,10 @@ import  Modals from './pages/ui/modals'
 import  Message from './pages/ui/message'
 import TabsList from './pages/ui/tabs'
 import  Gallery from './pages/ui/gallery'
+import CarouselList  from './pages/ui/Carousel'
+import  FormLogin from './pages/form/login'
+import FormRegister from './pages/form/register'
+import BasicTable from './pages/table/basic'
 
 export default class IRoute extends React.Component{
     render() {
@@ -25,10 +29,14 @@ export default class IRoute extends React.Component{
                                 <Route path='/admin/ui/messages' component={Message}/>
                                 <Route path='/admin/ui/tabs' component={TabsList}/>
                                 <Route path='/admin/ui/gallery' component={Gallery}/>
+                                <Route path='/admin/ui/carousel' component={CarouselList}/>
+                                <Route path='/admin/form/login' component={FormLogin}/>
+                                <Route path='/admin/form/reg' component={FormRegister}/>
+                                <Route path='/admin/table/basic' component={BasicTable}/>
+
                             </Switch>
                          </Admin>
                     }/>
-                    <Route path='/order/detail' component={Login} component={Login}/>
                 </App>
             </BrowserRouter>
         );

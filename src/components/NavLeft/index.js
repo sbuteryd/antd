@@ -37,7 +37,7 @@ export default class NavLeft extends Component{
         return (
             <div>
                 <div className="logo">
-                    <img src="/assets/logo-ant.svg" alt=""/>
+                     <img src="/assets/logo-ant.svg" alt=""/>
                     <h1>Iooc MS</h1>
                 </div>
                 <Menu theme={"dark"}>

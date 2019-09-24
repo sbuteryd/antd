@@ -1,8 +1,18 @@
 import React, {Component} from "react";
-import {Card,Row,Col} from 'antd'
-
+import {Card,Row,Col,Modal} from 'antd'
+import './ui.less'
 
 export default class Gallery extends React.Component{
+    state = {
+        visible:false
+    }
+    openGallery =(imgSrc)=>{
+        this.setState({
+            visible:true,
+            currentImge:`/assets/gallery/${imgSrc}`
+        })
+    }
+
     render() {
         const imgs =[
             ['1.png','2.png','3.png','4.png','5.png'],
@@ -11,7 +21,13 @@ export default class Gallery extends React.Component{
         ]
         const imgList = imgs.map((list)=>list.map((item)=>(
             <Card
-                cover={<img src={`/gallery/${item}`}/>}
+                hoverable='true'
+                cover={
+                    <img src={`/assets/gallery/${item}
+                    `}
+                         onClick={()=>this.openGallery(item)}
+                    />}
+
             >
                 <Card.Meta
                     title='React Admin'
@@ -21,29 +37,34 @@ export default class Gallery extends React.Component{
             )))
         return (
             <div className='card-wrap'>
-                <Row>
-                    <Col md={4}>
+                <Row gutter={24}>
+                    <Col span={6}>
                         {imgList[0]}
                     </Col>
-                    <Col md={4}>
-                        {imgList[0]}
+                    <Col span={6}>
+                        {imgList[1]}
                     </Col>
-                    <Col md={4}>
-                        {imgList[0]}
+                    <Col span={6}>
+                        {imgList[2]}
                     </Col>
-                    <Col md={4}>
-                        {imgList[0]}
-                    </Col>
-                    <Col md={4}>
-                        {imgList[0]}
-                    </Col>
-                    <Col md={4}>
-                        {imgList[0]}
-                    </Col>
-                    <Col md={4}>
-                        {imgList[0]}
+                    <Col span={6}>
+                        {imgList[3]}
                     </Col>
                 </Row>
+                <Modal
+                    title='图片'
+                    width={'50%'}
+                    height={'50%'}
+                    visible={this.state.visible}
+                    onCancel={()=>{
+                        this.setState({
+                            visible:false
+                        })
+                    }}
+                    footer={null}
+                >
+                    {<img src={this.state.currentImge} style={{width:'100%'}} alt=""/>}
+                </Modal>
             </div>
         );
     }
