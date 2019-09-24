@@ -5,6 +5,10 @@ import Login from './pages/login/index'
 import Admin from "./Admin"
 import Button from "./pages/ui/buttons";
 import NoMatch from "./pages/nomatch/index";
+import  Modals from './pages/ui/modals'
+import  Message from './pages/ui/message'
+import TabsList from './pages/ui/tabs'
+import  Gallery from './pages/ui/gallery'
 
 export default class IRoute extends React.Component{
     render() {
@@ -16,7 +20,11 @@ export default class IRoute extends React.Component{
                         <Admin>
                             <Switch>
                                 <Route path='/admin/ui/buttons' component={Button}/>
-                                <Route component={NoMatch}/>
+                                <Route path='/admin/ui/modals' component={Modals}/>
+                                {/*<Route component={NoMatch}/>*/}
+                                <Route path='/admin/ui/messages' component={Message}/>
+                                <Route path='/admin/ui/tabs' component={TabsList}/>
+                                <Route path='/admin/ui/gallery' component={Gallery}/>
                             </Switch>
                          </Admin>
                     }/>
